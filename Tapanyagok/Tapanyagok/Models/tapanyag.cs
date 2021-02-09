@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tapanyagok
+namespace Tapanyagok.Models
 {
     using System;
     using System.Collections.Generic;

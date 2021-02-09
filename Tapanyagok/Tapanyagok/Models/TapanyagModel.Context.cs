@@ -7,15 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Tapanyagok
+namespace Tapanyagok.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DbContext : DbContext
+    public partial class TpContext : DbContext
     {
-        public DbContext()
+        public TpContext()
             : base("name=DbContext")
         {
         }

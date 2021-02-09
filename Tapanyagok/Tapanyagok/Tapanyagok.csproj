@@ -72,26 +72,30 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\tapanyag_partial.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tapanyag.cs">
+    <Compile Include="Models\tapanyag.cs">
       <DependentUpon>TapanyagModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TapanyagModel.Context.cs">
+    <Compile Include="Models\TapanyagModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TapanyagModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="TapanyagModel.cs">
+    <Compile Include="Models\TapanyagModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TapanyagModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TapanyagModel.Designer.cs">
+    <Compile Include="Models\TapanyagModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TapanyagModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\TapanyagRepository.cs" />
+    <Compile Include="ViewInterfaces\ITablazatView.cs" />
+    <Compile Include="ViewInterfaces\ITapanyagView.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -111,11 +115,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="TapanyagModel.edmx">
+    <EntityDeploy Include="Models\TapanyagModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TapanyagModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="TapanyagModel.edmx.diagram">
+    <None Include="Models\TapanyagModel.edmx.diagram">
       <DependentUpon>TapanyagModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
@@ -123,12 +127,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TapanyagModel.Context.tt">
+    <Content Include="Models\TapanyagModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TapanyagModel.edmx</DependentUpon>
       <LastGenOutput>TapanyagModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="TapanyagModel.tt">
+    <Content Include="Models\TapanyagModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TapanyagModel.edmx</DependentUpon>
       <LastGenOutput>TapanyagModel.cs</LastGenOutput>
@@ -136,6 +140,10 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presenters\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
