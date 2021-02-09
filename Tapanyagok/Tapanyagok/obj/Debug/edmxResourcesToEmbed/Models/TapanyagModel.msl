@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tapanyagokModelStoreContainer" CdmEntityContainer="DbContext">
+    <EntitySetMapping Name="tapanyag">
+      <EntityTypeMapping TypeName="tapanyagokModel.tapanyag">
+        <MappingFragment StoreEntitySet="tapanyag">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nev" ColumnName="nev" />
+          <ScalarProperty Name="energia" ColumnName="energia" />
+          <ScalarProperty Name="feherje" ColumnName="feherje" />
+          <ScalarProperty Name="zsir" ColumnName="zsir" />
+          <ScalarProperty Name="szenhidrat" ColumnName="szenhidrat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
