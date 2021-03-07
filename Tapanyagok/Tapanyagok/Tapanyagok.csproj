@@ -66,12 +66,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\tapanyag_partial.cs" />
     <Compile Include="Presenters\TablazatPresenter.cs" />
     <Compile Include="Program.cs" />
