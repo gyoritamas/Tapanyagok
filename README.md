@@ -44,3 +44,44 @@ kapott tapanyag létezik-e az adatbázisban.
 paramétereket, amelyek a repository GetAllTapanyag metódusához szükségesek.
 3. Készítsen egy másik interfészt ITapanyagView néven.
 4. Az interfész tartalmozzon egy tapanyag típusú tulajdonságot.
+
+## Presenter réteg
+* Készítsen egy osztályt TablazatPresenter néven a Presenter mappában. Az osztálynak legyen egy TapanyagRepository és egy ITablazatView tulajdonsága.
+* Hozzon létre egy konstruktort, ami megköveteli ITablazatView paramétert, majd a paraméter értéket adja át a presenter azonos tulajdonságának.
+* Hozzon létre egy metódust LoadData néven, ami az ITablazatView listáját feltölti az adatbázisban lévő elemekkel.
+* Készítsen további metódusokat Add, Remove, Modify, Save néven, amik a repository hozzá tartozó CRUD műveleteit hívja meg.
+  * Az Add metódushoz egy tapanyag típusú paraméter szükséges.
+  * A Modify metódushoz egy index és egy tapanyag típusú paraméter fog kellene. Az index alapján a listában lehet kikeresni az elemet és frissíteni a nézetben, majd a repository-nak átadni.
+  * A Remove metódushoz elég egy index paraméter.
+
+## UI réteg
+### TablazatForm
+* Készítse el a csatolt kép szerint a TablazatForm képernyőt a Views mappában.
+* A Program.cs írja át a következő sort a megadott Form-ra: Application.Run(new TablazatForm());
+* A következő elemek szerepeljenek benne:
+  * Eszköztár menüszalag (ToolStrip): 4 gomb (Mentés, Új, Törlés, Keresés), 1 szöveges beviteli mező (a keresésnek)
+  * Táblázatnézet (DataGridView – későbbiekben DGV). Két tulajdonsága legyen False értékű: AllowUserToAddRows, AllowUserToDeleteRows.
+  * 4 navigáló gomb (Button) és középen egy címke (Label)
+  * Context MenuStrip, 2 elemmel (Szerkesztés, Törlés). Legyen társítva a DataGridView-hoz!
+* Impelementálja a Form kód részébe az ITablazatView interfészt és társítsa a Form vezérlőelemeivel (Control).
+* A kód részben szerepeljen a TablazatPresenter, amit a Form létrehozásakor példányosít!
+* A felső menüszalag gombjainak és a Context menü elemeinek hozzon létre klikk eseményeket.
+* Kösse össze az interfészben deklarált bindingListet a DGV elemmel. Készítse el a következő műveleteket:
+  * DGV elemeinek lapozása, keresése, sorrendezése.
+  * A TablazatForm betöltésekor töltődjön fel a DGV elemekkel.
+* A Context menü Törlés gombja és a felső eszköztár Törlés gombja törölje ki a kijelölt elemeket a táblázatból.
+
+### TapanyagForm
+* Készítse el a mellékelt kép alapján a TapanyagForm képernyőt!
+* A következő elemek szerepeljenek benne:
+  * 5 db címke elem (Label)
+  * Szöveges beviteli elem (TextBox MultiLine)
+  * 4 db szám beviteli elem (NumbericUpDown). Állítsa be a DecimalPlaces értékét 1-re.
+  * 2 db gomb (OK, Mégse). A Button elemeknek állítsa be a DialogResult érékét OK-ra és Cancel-re.
+* A TapanyagForm kód részében implementálja az ITapanyagView interfészt!
+  * Az új tapanyag tulajdonság értékét társítsa a form beviteli elemeivel.
+  * Segítségül hozzon létre egy belső egész számos változót az elsődleges kulcs kezelésére (int id).
+
+### TablazatForm
+* Az Új gomb lenyomáskor jelenlen meg az elkészült TapanyagForm dialógus ablaka! Az OK gomb lenyomása után adódjon hozzá az elem a DGV-hez és az adatbázisba.
+* A Szerkesztés gomb lenyomásakor jelenlen meg a TapanyagForm dialógus a megadott sor értékeivel. Az OK gomb lenyomása után frissítse a DGV sorát és az adatbázis rekordot is.
