@@ -71,11 +71,11 @@ namespace Tapanyagok.Views
         #region Menü elemek
         private void mentesMenuItem_Click(object sender, EventArgs e)
         {
-
+            presenter.Save();
         }
         private void ujMenuItem_Click(object sender, EventArgs e)
         {
-
+            NewDGRow();
         }
         private void torlesMenuItem_Click(object sender, EventArgs e)
         {
@@ -86,6 +86,17 @@ namespace Tapanyagok.Views
         {
             page = 1;
             presenter.LoadData();
+        }
+        #endregion
+
+        #region Context menü elemek
+        private void szerkesztesContextMenuItem_Click(object sender, EventArgs e)
+        {
+            NewDGRow();
+        }
+        private void torlesContextMenuItem_Click(object sender, EventArgs e)
+        {
+            DelDGRow();
         }
         #endregion
 
@@ -123,17 +134,6 @@ namespace Tapanyagok.Views
 
         #endregion
 
-        #region Context menü elemek
-        private void szerkesztesContextMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void torlesContextMenuItem_Click(object sender, EventArgs e)
-        {
-            DelDGRow();
-        }
-        #endregion
-
         private void dataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (sortIndex == e.ColumnIndex)
@@ -166,6 +166,19 @@ namespace Tapanyagok.Views
             presenter.LoadData();
         }
 
+        private void NewDGRow()
+        {
+            using (var tapanyagForm = new TapanyagForm())
+            {
+                DialogResult dialogResult = tapanyagForm.ShowDialog(this);
+                if(dialogResult == DialogResult.OK)
+                {
+                    // presenter.Add(tapanyagForm...)
+                    tapanyagForm.Close();
+                }
+            }
+        }
+        
         private void DelDGRow()
         {
             while (dataGridView.SelectedRows.Count > 0)

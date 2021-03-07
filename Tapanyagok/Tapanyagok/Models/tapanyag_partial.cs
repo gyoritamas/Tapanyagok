@@ -13,7 +13,7 @@ namespace Tapanyagok.Models
 
         }
 
-        public tapanyag(string nev, int energia, int feherje, int zsir, int szenhidrat)
+        public tapanyag(string nev, decimal energia, decimal feherje, decimal zsir, decimal szenhidrat)
         {
             this.nev = nev;
             this.energia = energia;
