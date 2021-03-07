@@ -13,8 +13,9 @@ namespace Tapanyagok.ViewInterfaces
         BindingList<tapanyag> bindingList { get; set; }
         int page { get; set; }
         int itemsPerPage { get; set; }
-        string search { get; set; }
+        string search { get; }
         string sortBy { get; set; }
         bool ascending { get; set; }
+        int totalItems { set; }
     }
 }

@@ -20,3 +20,5 @@ C:\Users\gyori\source\repos\Tapanyagok\Tapanyagok\Tapanyagok\obj\Debug\Tapanyago
 C:\Users\gyori\source\repos\Tapanyagok\Tapanyagok\Tapanyagok\obj\Debug\Tapanyagok.csproj.CopyComplete
 C:\Users\gyori\source\repos\Tapanyagok\Tapanyagok\Tapanyagok\obj\Debug\Tapanyagok.exe
 C:\Users\gyori\source\repos\Tapanyagok\Tapanyagok\Tapanyagok\obj\Debug\Tapanyagok.pdb
+C:\Users\gyori\source\repos\Tapanyagok\Tapanyagok\Tapanyagok\obj\Debug\Tapanyagok.Views.TablazatForm.resources
+C:\Users\gyori\source\repos\Tapanyagok\Tapanyagok\Tapanyagok\obj\Debug\Tapanyagok.Views.TapanyagForm.resources

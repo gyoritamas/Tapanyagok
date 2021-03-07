@@ -14,6 +14,10 @@ namespace Tapanyagok.Repositories
         TpContext db = new TpContext();
 
         private int _totalItems;
+        public int TotalItems
+        {
+            get { return _totalItems; }
+        }
 
         public BindingList<tapanyag> GetAllTapanyag(
             int page = 0,
@@ -23,18 +27,15 @@ namespace Tapanyagok.Repositories
             bool ascending = true)
         {
             var query = db.tapanyag.OrderBy(x => x.nev).AsQueryable();
-            
+
             // Keresés
             if (!string.IsNullOrWhiteSpace(search))
             {
-                int.TryParse(search, out int ertek);
+                //double.TryParse(search, out double ertek);
 
-                query = query.Where(x =>
-                    x.nev.Contains(search) ||
-                    x.energia.Equals(ertek) ||
-                    x.feherje.Equals(ertek) ||
-                    x.zsir.Equals(ertek) ||
-                    x.szenhidrat.Equals(ertek));
+                query = query.Where(x => x.nev.Contains(search)
+                    //|| x.energia.Equals(ertek) ||x.feherje.Equals(ertek) || x.zsir.Equals(ertek) || x.szenhidrat.Equals(ertek)
+                    );
             }
 
             // Sorbarendezés
@@ -62,7 +63,7 @@ namespace Tapanyagok.Repositories
                 }
             }
 
-            // Összes találat kiszámítása
+            // Összes találat
             _totalItems = query.Count();
 
             // Oldaltördelés
@@ -74,10 +75,7 @@ namespace Tapanyagok.Repositories
             return new BindingList<tapanyag>(query.ToList());
         }
 
-        public int TotalItems
-        {
-            get { return _totalItems; }
-        }
+
 
         public bool Exists(int id)
         {
