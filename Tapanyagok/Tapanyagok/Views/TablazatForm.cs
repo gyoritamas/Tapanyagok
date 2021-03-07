@@ -47,18 +47,14 @@ namespace Tapanyagok.Views
         public string search
         {
             get => keresesTextBox.Text;
-            set { }
-        }
 
+        }
 
         public string sortBy { get; set; }
         public bool ascending { get; set; }
         public int totalItems
         {
-            get
-            {
-                return _totalItems;
-            }
+            get => _totalItems;
             set
             {
                 _totalItems = value;
@@ -72,10 +68,29 @@ namespace Tapanyagok.Views
             presenter.LoadData();
         }
 
+        #region Menü elemek
+        private void mentesMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void ujMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void torlesContextMenuItem_Click(object sender, EventArgs e)
         {
             presenter.Remove(0);
         }
+
+        private void keresesMenuItem_Click(object sender, EventArgs e)
+        {
+            page = 1;
+            presenter.LoadData();
+        }
+        #endregion
+
+        #region Navigációs gombok
 
         private void FirstButton_Click(object sender, EventArgs e)
         {
@@ -107,11 +122,9 @@ namespace Tapanyagok.Views
             presenter.LoadData();
         }
 
-        private void keresesMenuItem_Click(object sender, EventArgs e)
-        {
-            presenter.LoadData();
-        }
+        #endregion
 
+        #region Táblázat
         private void dataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (sortIndex == e.ColumnIndex)
@@ -143,5 +156,8 @@ namespace Tapanyagok.Views
             sortIndex = e.ColumnIndex;
             presenter.LoadData();
         }
+
+        #endregion
+
     }
 }

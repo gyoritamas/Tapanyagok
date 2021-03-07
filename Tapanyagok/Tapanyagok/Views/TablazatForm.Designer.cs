@@ -121,9 +121,6 @@ namespace Tapanyagok.Views
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToResizeRows = false;
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -161,12 +158,14 @@ namespace Tapanyagok.Views
             this.mentesMenuItem.Name = "mentesMenuItem";
             this.mentesMenuItem.Size = new System.Drawing.Size(58, 23);
             this.mentesMenuItem.Text = "Mentés";
+            this.mentesMenuItem.Click += new System.EventHandler(this.mentesMenuItem_Click);
             // 
             // ujMenuItem
             // 
             this.ujMenuItem.Name = "ujMenuItem";
             this.ujMenuItem.Size = new System.Drawing.Size(30, 23);
             this.ujMenuItem.Text = "Új";
+            this.ujMenuItem.Click += new System.EventHandler(this.ujMenuItem_Click);
             // 
             // torlesMenuItem
             // 
@@ -245,7 +244,7 @@ namespace Tapanyagok.Views
             this.nevDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nevDataGridViewTextBoxColumn.DataPropertyName = "nev";
             this.nevDataGridViewTextBoxColumn.FillWeight = 95.63452F;
-            this.nevDataGridViewTextBoxColumn.HeaderText = "nev";
+            this.nevDataGridViewTextBoxColumn.HeaderText = "név";
             this.nevDataGridViewTextBoxColumn.Name = "nevDataGridViewTextBoxColumn";
             // 
             // energiaDataGridViewTextBoxColumn
@@ -262,7 +261,7 @@ namespace Tapanyagok.Views
             this.feherjeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.feherjeDataGridViewTextBoxColumn.DataPropertyName = "feherje";
             this.feherjeDataGridViewTextBoxColumn.FillWeight = 95.63452F;
-            this.feherjeDataGridViewTextBoxColumn.HeaderText = "feherje";
+            this.feherjeDataGridViewTextBoxColumn.HeaderText = "fehérje";
             this.feherjeDataGridViewTextBoxColumn.Name = "feherjeDataGridViewTextBoxColumn";
             this.feherjeDataGridViewTextBoxColumn.Width = 60;
             // 
@@ -271,7 +270,7 @@ namespace Tapanyagok.Views
             this.zsirDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.zsirDataGridViewTextBoxColumn.DataPropertyName = "zsir";
             this.zsirDataGridViewTextBoxColumn.FillWeight = 95.63452F;
-            this.zsirDataGridViewTextBoxColumn.HeaderText = "zsir";
+            this.zsirDataGridViewTextBoxColumn.HeaderText = "zsír";
             this.zsirDataGridViewTextBoxColumn.Name = "zsirDataGridViewTextBoxColumn";
             this.zsirDataGridViewTextBoxColumn.Width = 60;
             // 
@@ -280,7 +279,7 @@ namespace Tapanyagok.Views
             this.szenhidratDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.szenhidratDataGridViewTextBoxColumn.DataPropertyName = "szenhidrat";
             this.szenhidratDataGridViewTextBoxColumn.FillWeight = 95.63452F;
-            this.szenhidratDataGridViewTextBoxColumn.HeaderText = "szenhidrat";
+            this.szenhidratDataGridViewTextBoxColumn.HeaderText = "szénhidrát";
             this.szenhidratDataGridViewTextBoxColumn.Name = "szenhidratDataGridViewTextBoxColumn";
             this.szenhidratDataGridViewTextBoxColumn.Width = 60;
             // 
