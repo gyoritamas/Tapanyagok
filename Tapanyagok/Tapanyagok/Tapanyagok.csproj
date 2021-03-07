@@ -73,6 +73,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\tapanyag_partial.cs" />
+    <Compile Include="Presenters\TablazatPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\tapanyag.cs">
@@ -96,6 +97,12 @@
     <Compile Include="Repositories\TapanyagRepository.cs" />
     <Compile Include="ViewInterfaces\ITablazatView.cs" />
     <Compile Include="ViewInterfaces\ITapanyagView.cs" />
+    <Compile Include="Views\TablazatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\TablazatForm.Designer.cs">
+      <DependentUpon>TablazatForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -105,7 +112,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\TablazatForm.resx">
+      <DependentUpon>TablazatForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Tapanyagok.Models.tapanyag.datasource" />
+    <None Include="Properties\DataSources\Tapanyagok.Models.TpContext.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -141,9 +153,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presenters\" />
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

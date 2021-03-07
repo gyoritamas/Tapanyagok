@@ -14,6 +14,10 @@ namespace Tapanyagok.Repositories
         TpContext db = new TpContext();
 
         private int _totalItems;
+        public int TotalItems
+        {
+            get { return _totalItems; }
+        }
 
         public BindingList<tapanyag> GetAllTapanyag(
             int page = 0,
@@ -74,10 +78,7 @@ namespace Tapanyagok.Repositories
             return new BindingList<tapanyag>(query.ToList());
         }
 
-        public int TotalItems
-        {
-            get { return _totalItems; }
-        }
+        
 
         public bool Exists(int id)
         {

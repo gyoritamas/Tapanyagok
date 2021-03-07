@@ -16,5 +16,6 @@ namespace Tapanyagok.ViewInterfaces
         string search { get; set; }
         string sortBy { get; set; }
         bool ascending { get; set; }
+        int totalItems { set; }
     }
 }
