@@ -131,6 +131,7 @@ namespace Tapanyagok.Views
             this.feherjeDataGridViewTextBoxColumn,
             this.zsirDataGridViewTextBoxColumn,
             this.szenhidratDataGridViewTextBoxColumn});
+            this.dataGridView.ContextMenuStrip = this.contextMenu;
             this.dataGridView.DataSource = this.tapanyagBindingSource1;
             this.dataGridView.Location = new System.Drawing.Point(13, 30);
             this.dataGridView.Name = "dataGridView";
@@ -172,6 +173,7 @@ namespace Tapanyagok.Views
             this.torlesMenuItem.Name = "torlesMenuItem";
             this.torlesMenuItem.Size = new System.Drawing.Size(49, 23);
             this.torlesMenuItem.Text = "Törlés";
+            this.torlesMenuItem.Click += new System.EventHandler(this.torlesMenuItem_Click);
             // 
             // keresesTextBox
             // 
@@ -198,13 +200,14 @@ namespace Tapanyagok.Views
             // 
             this.szerkesztesContextMenuItem.Name = "szerkesztesContextMenuItem";
             this.szerkesztesContextMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.szerkesztesContextMenuItem.Text = "Szerkesztes";
+            this.szerkesztesContextMenuItem.Text = "Szerkesztés";
+            this.szerkesztesContextMenuItem.Click += new System.EventHandler(this.szerkesztesContextMenuItem_Click);
             // 
             // torlesContextMenuItem
             // 
             this.torlesContextMenuItem.Name = "torlesContextMenuItem";
             this.torlesContextMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.torlesContextMenuItem.Text = "Torles";
+            this.torlesContextMenuItem.Text = "Törlés";
             this.torlesContextMenuItem.Click += new System.EventHandler(this.torlesContextMenuItem_Click);
             // 
             // tableLayoutPanel1

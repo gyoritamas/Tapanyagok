@@ -77,10 +77,9 @@ namespace Tapanyagok.Views
         {
 
         }
-
-        private void torlesContextMenuItem_Click(object sender, EventArgs e)
+        private void torlesMenuItem_Click(object sender, EventArgs e)
         {
-            presenter.Remove(0);
+            DelDGRow();
         }
 
         private void keresesMenuItem_Click(object sender, EventArgs e)
@@ -124,7 +123,17 @@ namespace Tapanyagok.Views
 
         #endregion
 
-        #region Táblázat
+        #region Context menü elemek
+        private void szerkesztesContextMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void torlesContextMenuItem_Click(object sender, EventArgs e)
+        {
+            DelDGRow();
+        }
+        #endregion
+
         private void dataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (sortIndex == e.ColumnIndex)
@@ -157,7 +166,13 @@ namespace Tapanyagok.Views
             presenter.LoadData();
         }
 
-        #endregion
+        private void DelDGRow()
+        {
+            while (dataGridView.SelectedRows.Count > 0)
+            {
+                presenter.Remove(dataGridView.SelectedRows[0].Index);
+            }
+        }
 
     }
 }
