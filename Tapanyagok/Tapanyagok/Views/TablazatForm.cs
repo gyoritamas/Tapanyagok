@@ -31,7 +31,7 @@ namespace Tapanyagok.Views
         {
             page = 1;
             itemsPerPage = 25;
-            sortBy = "id";
+            sortBy = "nev";
             sortIndex = 0;
             ascending = true;
         }
@@ -92,7 +92,15 @@ namespace Tapanyagok.Views
         #region Context menü elemek
         private void szerkesztesContextMenuItem_Click(object sender, EventArgs e)
         {
-            NewDGRow();
+            if (dataGridView.SelectedRows != null)
+            {
+                var index = dataGridView.SelectedCells[0].RowIndex;
+
+                dataGridView.ClearSelection();
+                dataGridView.Rows[index].Selected = true;
+                EditDGRow(index);
+            }
+
         }
         private void torlesContextMenuItem_Click(object sender, EventArgs e)
         {
@@ -171,14 +179,32 @@ namespace Tapanyagok.Views
             using (var tapanyagForm = new TapanyagForm())
             {
                 DialogResult dialogResult = tapanyagForm.ShowDialog(this);
-                if(dialogResult == DialogResult.OK)
+                if (dialogResult == DialogResult.OK)
                 {
-                    // presenter.Add(tapanyagForm...)
+                    presenter.Add(tapanyagForm.tapanyag);
+                    tapanyagForm.Close();
+                }
+
+                RefreshView();
+            }
+        }
+
+        private void EditDGRow(int index)
+        {
+            var editedTapanyag = (tapanyag)dataGridView.Rows[index].DataBoundItem;
+            using (var tapanyagForm = new TapanyagForm())
+            {
+                tapanyagForm.tapanyag = editedTapanyag;
+
+                DialogResult dialogResult = tapanyagForm.ShowDialog(this);
+                if (dialogResult == DialogResult.OK)
+                {
+                    presenter.Modifiy(index, tapanyagForm.tapanyag);
                     tapanyagForm.Close();
                 }
             }
         }
-        
+
         private void DelDGRow()
         {
             while (dataGridView.SelectedRows.Count > 0)
@@ -187,5 +213,10 @@ namespace Tapanyagok.Views
             }
         }
 
+        private void RefreshView()
+        {
+            presenter.Save();
+            presenter.LoadData();
+        }
     }
 }

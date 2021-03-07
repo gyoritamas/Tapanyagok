@@ -138,6 +138,7 @@ namespace Tapanyagok.Views
             this.dataGridView.DataSource = this.tapanyagBindingSource1;
             this.dataGridView.Location = new System.Drawing.Point(13, 30);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(476, 576);
             this.dataGridView.TabIndex = 1;
             this.dataGridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_ColumnHeaderMouseClick);
@@ -243,6 +244,8 @@ namespace Tapanyagok.Views
             this.idDataGridViewTextBoxColumn.FillWeight = 121.8274F;
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
             this.idDataGridViewTextBoxColumn.Width = 40;
             // 
             // nevDataGridViewTextBoxColumn
@@ -252,6 +255,7 @@ namespace Tapanyagok.Views
             this.nevDataGridViewTextBoxColumn.FillWeight = 95.63452F;
             this.nevDataGridViewTextBoxColumn.HeaderText = "név";
             this.nevDataGridViewTextBoxColumn.Name = "nevDataGridViewTextBoxColumn";
+            this.nevDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // energiaDataGridViewTextBoxColumn
             // 
@@ -260,6 +264,7 @@ namespace Tapanyagok.Views
             this.energiaDataGridViewTextBoxColumn.FillWeight = 95.63452F;
             this.energiaDataGridViewTextBoxColumn.HeaderText = "energia";
             this.energiaDataGridViewTextBoxColumn.Name = "energiaDataGridViewTextBoxColumn";
+            this.energiaDataGridViewTextBoxColumn.ReadOnly = true;
             this.energiaDataGridViewTextBoxColumn.Width = 60;
             // 
             // feherjeDataGridViewTextBoxColumn
@@ -269,6 +274,7 @@ namespace Tapanyagok.Views
             this.feherjeDataGridViewTextBoxColumn.FillWeight = 95.63452F;
             this.feherjeDataGridViewTextBoxColumn.HeaderText = "fehérje";
             this.feherjeDataGridViewTextBoxColumn.Name = "feherjeDataGridViewTextBoxColumn";
+            this.feherjeDataGridViewTextBoxColumn.ReadOnly = true;
             this.feherjeDataGridViewTextBoxColumn.Width = 60;
             // 
             // zsirDataGridViewTextBoxColumn
@@ -278,6 +284,7 @@ namespace Tapanyagok.Views
             this.zsirDataGridViewTextBoxColumn.FillWeight = 95.63452F;
             this.zsirDataGridViewTextBoxColumn.HeaderText = "zsír";
             this.zsirDataGridViewTextBoxColumn.Name = "zsirDataGridViewTextBoxColumn";
+            this.zsirDataGridViewTextBoxColumn.ReadOnly = true;
             this.zsirDataGridViewTextBoxColumn.Width = 60;
             // 
             // szenhidratDataGridViewTextBoxColumn
@@ -287,6 +294,7 @@ namespace Tapanyagok.Views
             this.szenhidratDataGridViewTextBoxColumn.FillWeight = 95.63452F;
             this.szenhidratDataGridViewTextBoxColumn.HeaderText = "szénhidrát";
             this.szenhidratDataGridViewTextBoxColumn.Name = "szenhidratDataGridViewTextBoxColumn";
+            this.szenhidratDataGridViewTextBoxColumn.ReadOnly = true;
             this.szenhidratDataGridViewTextBoxColumn.Width = 60;
             // 
             // tapanyagBindingSource1
@@ -305,9 +313,11 @@ namespace Tapanyagok.Views
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "TablazatForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tápanyagok";
             this.Load += new System.EventHandler(this.TablazatForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();

@@ -60,6 +60,7 @@ namespace Tapanyagok.Views
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -79,6 +80,7 @@ namespace Tapanyagok.Views
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
             // 
@@ -113,6 +115,11 @@ namespace Tapanyagok.Views
             // 
             this.energiaNUD.DecimalPlaces = 1;
             this.energiaNUD.Location = new System.Drawing.Point(25, 112);
+            this.energiaNUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.energiaNUD.Name = "energiaNUD";
             this.energiaNUD.Size = new System.Drawing.Size(247, 20);
             this.energiaNUD.TabIndex = 1;
@@ -122,6 +129,11 @@ namespace Tapanyagok.Views
             // 
             this.feherjeNUD.DecimalPlaces = 1;
             this.feherjeNUD.Location = new System.Drawing.Point(25, 138);
+            this.feherjeNUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.feherjeNUD.Name = "feherjeNUD";
             this.feherjeNUD.Size = new System.Drawing.Size(247, 20);
             this.feherjeNUD.TabIndex = 2;
@@ -131,6 +143,11 @@ namespace Tapanyagok.Views
             // 
             this.zsirNUD.DecimalPlaces = 1;
             this.zsirNUD.Location = new System.Drawing.Point(25, 164);
+            this.zsirNUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.zsirNUD.Name = "zsirNUD";
             this.zsirNUD.Size = new System.Drawing.Size(247, 20);
             this.zsirNUD.TabIndex = 3;
@@ -140,6 +157,11 @@ namespace Tapanyagok.Views
             // 
             this.szenhidratNUD.DecimalPlaces = 1;
             this.szenhidratNUD.Location = new System.Drawing.Point(25, 190);
+            this.szenhidratNUD.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.szenhidratNUD.Name = "szenhidratNUD";
             this.szenhidratNUD.Size = new System.Drawing.Size(247, 20);
             this.szenhidratNUD.TabIndex = 4;
@@ -216,8 +238,10 @@ namespace Tapanyagok.Views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 286);
             this.Controls.Add(this.splitContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "TapanyagForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TapanyagForm";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
